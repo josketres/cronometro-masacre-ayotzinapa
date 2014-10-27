@@ -34,9 +34,9 @@ angular.module('cronometroMasacreAyotzinapaApp')
 			count = Math.floor(count / 365);
 			var yearsValue = count
 
-			$scope.hour = new Number(secsValue)
+			$scope.hour = new Number(hoursValue)
 			$scope.min = new Number(minsValue)
-			$scope.sec = new Number(hoursValue)
+			$scope.sec = new Number(secsValue)
 			$scope.day = new Number(daysValue)
 			$scope.year = new Number(yearsValue)
 		};
