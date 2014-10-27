@@ -7,6 +7,8 @@
 // use this if you want to recursively match all subfolders:
 // 'test/spec/**/*.js'
 
+var pkg = require('./package.json');
+
 module.exports = function (grunt) {
 
   // Load grunt tasks automatically
@@ -14,6 +16,8 @@ module.exports = function (grunt) {
 
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
+
+  grunt.loadNpmTasks('grunt-build-control');
 
   // Configurable paths for the application
   var appConfig = {
@@ -134,7 +138,7 @@ module.exports = function (grunt) {
     clean: {
       dist: {
         files: [{
-          dot: true,
+          dot: false,
           src: [
             '.tmp',
             '<%= yeoman.dist %>/{,*/}*',
@@ -377,6 +381,27 @@ module.exports = function (grunt) {
         'imagemin',
         'svgmin'
       ]
+    },
+
+    buildcontrol: {
+      options: {
+        dir: 'dist',
+        commit: true,
+        push: true,
+        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+      },
+      pages: {
+        options: {
+          remote: 'git@github.com:josketres/cronometro-masacre-ayotzinapa.git',
+          branch: 'gh-pages'
+        }
+      },
+      local: {
+        options: {
+          remote: '../',
+          branch: 'build'
+        }
+      }
     },
 
     // Test settings
