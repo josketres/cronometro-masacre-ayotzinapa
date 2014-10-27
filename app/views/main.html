@@ -1,23 +1,43 @@
 <div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
+
+  <div ng-if="months() > 0">
+    <div>{{months()}}</div>
+    <div>
+      <ng-pluralize 
+        count="months()"
+        when="{'0': '',
+            'one': 'mes',
+            'other': 'meses'}">
+      </ng-pluralize>
+    </div>
+  </div>
+
+
+  <h1>{{months()}} mes, 2 días y 2 horas</h1>
   <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
+    y los 43 normalistas aún no aparecen.
   </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
 </div>
 
 <div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
+  <h4>#JusticiaParaAyotzinapa</h4>
   <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
+    Pasemos de la indignación a la digna acción.
   </p>
 
-  <h4>Angular</h4>
+  <h4>#FueElEstado</h4>
   <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
+    ¡Vivos se los llevaron, vivos los queremos!
   </p>
 
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+  <h4>Fue en Iguala</h4>
+  <p>
+    {{eventDate | date:'medium'}}
+  </p>
+  <p>
+    <google-map center="map.center" zoom="map.zoom" options="map.options" draggable="true">
+    </google-map>
+  </p>
 </div>
+
+

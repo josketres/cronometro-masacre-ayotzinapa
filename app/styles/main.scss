@@ -12,6 +12,8 @@
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  background-color: #000;
+  color: #fff;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -48,8 +50,8 @@ body {
 
 /* Main marketing message and sign up button */
 .jumbotron {
+  background-color: #000;
   text-align: center;
-  border-bottom: 1px solid #e5e5e5;
 
   .btn {
     font-size: 21px;
@@ -64,6 +66,12 @@ body {
   p + h4 {
     margin-top: 28px;
   }
+}
+
+.angular-google-map-container {
+  height: 400px;
+  width: 100%;
+  border: 10px solid #fff;
 }
 
 /* Responsive: Portrait tablets and up */
