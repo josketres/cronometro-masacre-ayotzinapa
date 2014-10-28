@@ -49,10 +49,15 @@ body {
 .jumbotron {
   background-color: #000;
   text-align: center;
+  padding-bottom: 0;
 
   .btn {
     font-size: 21px;
     padding: 14px 24px;
+  }
+
+  .social {
+    margin-top: 30px;
   }
 
   .day, .hour, .min, .sec, .year {
@@ -99,6 +104,10 @@ body {
 
   .jumbotron {
     border-bottom: 0;
+
+    .social {
+      margin-top: 30px;
+    }
 
     .day, .hour, .min, .sec, .year {
       line-height: 1.1em;
