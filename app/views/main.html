@@ -1,27 +1,47 @@
 <div class="jumbotron">
 
-  <div ng-if="months() > 0">
-    <div>{{months()}}</div>
-    <div>
-      <ng-pluralize 
-        count="months()"
-        when="{'0': '',
-            'one': 'mes',
-            'other': 'meses'}">
-      </ng-pluralize>
-    </div>
+  <div class="day">
+    <ng-pluralize 
+      count="day"
+      when="{'0': '0 d&iacute;as',
+          'one': '1 d&iacute;a',
+          'other': '{} d&iacute;as'}">
+    </ng-pluralize>
   </div>
-
-
-  <h1>{{day}} días</h1>
-  <h1>{{hour}} horas</h1>
-  <h1>{{min}} minutos</h1>
-  <p class="lead">
-    y los 43 normalistas aún no aparecen.
-  </p>
+  <div class="hour">
+    <ng-pluralize 
+      count="hour"
+      when="{'0': '0 horas',
+          'one': '1 hora',
+          'other': '{} horas'}">
+    </ng-pluralize>
+  </div>
+  <div class="min">
+    <ng-pluralize 
+      count="min"
+      when="{'0': '0 minutos',
+          'one': '1 minuto',
+          'other': '{} minutos'}">
+    </ng-pluralize>
+  </div>
+  <div class="sec">
+    <ng-pluralize 
+      count="sec"
+      when="{'0': '0 segundos',
+          'one': '1 segundo',
+          'other': '{} segundos'}">
+    </ng-pluralize>
+  </div>
+  <h1>y los 43 normalistas aún no aparecen...</h1>
+  <facebook-like />
 </div>
 
 <div class="row marketing">
+  <h4>¿Qu&eacute; es esto?</h4>
+  <p>
+    Este sitio es un contador digital del tiempo transcurrido sin que se aclare el caso de la desaparici&oacute;n forzada de 43 estudiantes normalistas en Iguala Guerrero. 
+  </p>
+
   <h4>#JusticiaParaAyotzinapa</h4>
   <p>
     Pasemos de la indignación a la digna acción.

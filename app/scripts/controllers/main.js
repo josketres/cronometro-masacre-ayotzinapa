@@ -8,7 +8,7 @@
  * Controller of the cronometroMasacreAyotzinapaApp
  */
 angular.module('cronometroMasacreAyotzinapaApp')
-	.controller('MainCtrl', function($scope, dateService) {
+	.controller('MainCtrl', function($scope, dateService, $timeout) {
 
 		$scope.eventDate = new Date(2014, 8, 26, 21, 0, 0);
 
@@ -40,7 +40,13 @@ angular.module('cronometroMasacreAyotzinapaApp')
 			$scope.day = new Number(daysValue)
 			$scope.year = new Number(yearsValue)
 		};
+
 		$scope.calculateDate();
+		var countUp = function() {
+			$scope.calculateDate();
+			$timeout(countUp, 1000);
+		}
+		$timeout(countUp, 1000);
 
 		// see http://dbsgeo.com/latlon/
 		$scope.map = {

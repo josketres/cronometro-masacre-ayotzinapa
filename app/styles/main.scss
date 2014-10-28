@@ -8,10 +8,7 @@
   padding: 0.2em 0;
 }
 
-/* Space out content a bit */
 body {
-  padding-top: 20px;
-  padding-bottom: 20px;
   background-color: #000;
   color: #fff;
 }
@@ -57,6 +54,15 @@ body {
     font-size: 21px;
     padding: 14px 24px;
   }
+
+  .day, .hour, .min, .sec, .year {
+    font-size: 36px;
+  }
+
+  h1 {
+    font-size: 16px;
+    line-height: 1.4em;
+  }
 }
 
 /* Supporting marketing content */
@@ -90,8 +96,17 @@ body {
   .header {
     margin-bottom: 30px;
   }
-  /* Remove the bottom border on the jumbotron for visual effect */
+
   .jumbotron {
     border-bottom: 0;
+
+    .day, .hour, .min, .sec, .year {
+      line-height: 1.1em;
+      font-size: 63px;
+    }
+
+    h1 {
+      font-size: 21px;
+    }
   }
 }
