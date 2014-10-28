@@ -16,9 +16,10 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'google-maps'
+    'google-maps',
+    'angulike'
   ])
-  .config(function ($routeProvider) {
+  .config(function($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -31,4 +32,10 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+  .run([
+    '$rootScope',
+    function($rootScope) {
+      $rootScope.facebookAppId = '982947961730970';
+    }
+  ]);
